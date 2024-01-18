@@ -228,7 +228,7 @@ sed -i "s|ftp.*.debian.org|ftp.debian.org|g" /etc/apt/sources.list
 apt update && apt -y upgrade && apt -y autoremove
 
 pveupgrade
-
+# add below line in cronjob
 sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
 
 apt install -y libguestfs-tools unzip iptables-persistent
